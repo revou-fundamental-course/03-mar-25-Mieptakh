@@ -17,24 +17,27 @@ body {
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, #007acc, #00aaff);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.2); /* Transparansi hitam lebih lembut */
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 18px 0;
+    padding: 20px 0;
     transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(8px); /* Blur lebih lembut */
+    -webkit-backdrop-filter: blur(8px); /* Safari */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih ringan */
 }
 
-/* Shrink Header saat di-scroll */
+/* Header saat digulir */
 header.scrolled {
-    background: #005f99;
-    padding: 12px 0;
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 122, 204, 0.7); /* Warna biru lebih lembut */
+    backdrop-filter: blur(12px); /* Blur lebih kuat saat scroll */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih tegas */
 }
 
-/* Container */
+/* CONTAINER */
 .container {
     width: 90%;
     margin: auto;
@@ -47,11 +50,11 @@ header.scrolled {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    color: #f1f1f1; /* Warna putih lembut */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -59,46 +62,37 @@ header.scrolled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid white;
+    margin-right: 12px;
     transition: all 0.3s ease-in-out;
-}
-
-/* Saat header mengecil */
-header.scrolled .logo img {
-    width: 40px;
-    height: 40px;
-}
-
-header.scrolled .logo {
-    font-size: 18px;
 }
 
 /* NAVIGATION */
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
+    transition: all 0.3s ease-in-out;
 }
 
 .nav-links a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    color: white;
-    padding: 8px 12px;
+    color: #f1f1f1;
+    padding: 10px 15px;
     position: relative;
-    transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
 }
 
-/* Animasi underline */
 .nav-links a::after {
     content: "";
     position: absolute;
     width: 0;
     height: 3px;
-    background-color: white;
+    background-color: #f9c419;
     left: 50%;
-    bottom: -5px;
+    bottom: -8px;
     transition: width 0.3s ease-in-out;
     transform: translateX(-50%);
 }
@@ -108,15 +102,16 @@ header.scrolled .logo {
 }
 
 .nav-links a:hover {
-    color: #ffff99;
+    color: #f9c419;
+    transform: translateY(-2px);
 }
 
 /* BURGER MENU */
 .burger-menu {
     display: none;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
-    color: white;
+    color: #f1f1f1;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -124,32 +119,45 @@ header.scrolled .logo {
     transform: rotate(90deg);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    header {
+        padding: 18px 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: 10px;
-        background: rgba(0, 122, 204, 0.95);
-        width: 220px;
-        border-radius: 8px;
+        right: 20px;
+        width: 250px;
+        border-radius: 10px;
         text-align: right;
-        padding: 15px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.3);
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease-in-out;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.4s ease-in-out;
     }
 
     .nav-links.active {
         display: flex;
-        animation: slideIn 0.3s ease-in-out;
+        animation: slideIn 0.4s ease-in-out;
     }
 
     .nav-links a {
         display: block;
         padding: 12px;
-        color: white;
+        color: #f1f1f1;
         font-size: 18px;
         transition: all 0.3s ease-in-out;
     }
@@ -159,11 +167,11 @@ header.scrolled .logo {
     }
 }
 
-/* Animasi Slide In */
+/* ANIMASI */
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
     to {
         opacity: 1;
@@ -171,20 +179,80 @@ header.scrolled .logo {
     }
 }
 
+@keyframes navAppear {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efek hover */
+.nav-links a:hover {
+    color: #f9c419;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.nav-links a:hover::before {
+    opacity: 0.2;
+    transform: scale(1);
+}
+
+/* Burger Menu Animasi */
+.burger-menu {
+    animation: bounce 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 /* HERO SECTION */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh; 
-    background: url('https://placehold.co/1366x578') no-repeat center center/cover;
+    background: url("/assets/hero/Untitled\ design.png") no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: flex-start; 
     padding: 80px 10%;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Overlay*/
+/* Overlay */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -207,16 +275,28 @@ header.scrolled .logo {
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 50px;
+    font-size: 60px; /* Ukuran font lebih besar */
     font-weight: bold;
     line-height: 1.2;
     text-transform: capitalize;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     animation: slideInLeft 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Tambahan efek hover untuk heading */
+.hero h1:hover {
+    transform: translateX(10px); /* Efek bergerak halus saat hover */
+}
+
+/* Parallax Effect on Hero Content */
+.hero-content {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hero Paragraph */
 .hero p {
-    font-size: 20px;
+    font-size: 22px;
     opacity: 0.9;
     margin-bottom: 25px;
     animation: fadeIn 1.2s ease-in-out;
@@ -236,13 +316,15 @@ header.scrolled .logo {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* CTA hover effect */
 .hero .cta:hover {
     background: #ffff99;
     color: #005f99;
     transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* RESPONSIVE */
+/* Responsiveness */
 @media (max-width: 768px) {
     .hero {
         height: 100vh;
@@ -250,11 +332,11 @@ header.scrolled .logo {
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 36px; /* Ukuran font lebih kecil untuk mobile */
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 18px; /* Ukuran font lebih kecil untuk mobile */
     }
 
     .hero .cta {
@@ -284,60 +366,299 @@ header.scrolled .logo {
     }
 }
 
-/* Facilities Section */
-.facilities {
-    text-align: center;
-    padding: 80px 10%;
-    background: #f4f9ff; 
+/* Fade-in-up animation for content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.facilities h2 {
-    font-size: 36px;
+/* === SECTION ABOUT US === */
+#about-us {
+    max-width: 1100px;
+    margin: 100px auto; /* Jarak atas-bawah biar proporsional */
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === BACKGROUND DEKORASI === */
+#about-us::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 95, 153, 0.1);
+    border-radius: 50%;
+    top: -30px;
+    left: -30px;
+    animation: floating 6s infinite alternate ease-in-out;
+}
+
+#about-us::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 95, 153, 0.08);
+    border-radius: 50%;
+    bottom: -40px;
+    right: -40px;
+    animation: floating 6s infinite alternate-reverse ease-in-out;
+}
+
+/* === JUDUL SECTION === */
+#about-us h2 {
+    font-size: 32px;
     color: #005f99;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 40px;
+    text-align: center;
+    margin-bottom: 25px;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* GARIS BAWAH H2 */
+#about-us h2::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #005f99;
+    margin: 10px auto;
+    border-radius: 3px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* === SUB-JUDUL === */
+#about-us h3 {
+    font-size: 24px;
+    color: #444;
+    margin-top: 25px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #005f99;
     display: inline-block;
 }
 
-.facilities h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #00aaff;
-    margin: 10px auto 0;
-    border-radius: 2px;
+/* === PARAGRAF === */
+#about-us p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
 }
 
-/* Facilities Grid */
+/* === LIST STYLE === */
+#about-us ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+/* LIST ITEM */
+#about-us ul li {
+    background: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* ICON DALAM LIST */
+#about-us ul li::before {
+    content: "✔";
+    font-weight: bold;
+    color: #005f99;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* EFEK HOVER LIST */
+#about-us ul li:hover {
+    background: #005f99;
+    color: white;
+    transform: translateX(6px);
+}
+
+#about-us ul li:hover::before {
+    color: white;
+}
+
+/* === ANIMASI === */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 120px; }
+}
+
+@keyframes floating {
+    from { transform: translateY(-10px); }
+    to { transform: translateY(10px); }
+}
+
+/* === RESPONSIVENESS === */
+@media (max-width: 1024px) {
+    #about-us {
+        padding: 50px 25px;
+        margin: 80px auto;
+    }
+
+    #about-us h2 {
+        font-size: 28px;
+    }
+
+    #about-us h3 {
+        font-size: 22px;
+    }
+
+    #about-us p {
+        font-size: 17px;
+    }
+
+    #about-us ul li {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-us {
+        padding: 40px 15px;
+        margin: 60px auto;
+    }
+
+    #about-us h2 {
+        font-size: 26px;
+    }
+
+    #about-us h3 {
+        font-size: 20px;
+    }
+
+    #about-us p {
+        font-size: 16px;
+    }
+
+    #about-us ul li {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+}
+
+/* === FACILITIES SECTION === */
+.facilities {
+    text-align: center;
+    padding: 120px 10%;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff); /* Gradient yang dinamis */
+    position: relative;
+    overflow: hidden;
+    animation: waveAnimation 4s ease-in-out infinite;
+}
+
+/* Dekorasi Bubble Floating */
+.facilities::before,
+.facilities::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(30px);
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+.facilities::before {
+    top: -50px;
+    left: -60px;
+}
+
+.facilities::after {
+    bottom: -50px;
+    right: -60px;
+}
+
+/* === JUDUL SECTION === */
+.facilities h2 {
+    font-size: 40px;
+    color: #004080;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* === FACILITY GRID === */
 .facility-grid {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
+    animation: gridAppear 2s ease-in-out;
 }
 
-/* Facility Card */
+/* === FACILITY CARD === */
 .facility-card {
     background: white;
     border-radius: 50%;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease-in-out;
     cursor: pointer;
     text-align: center;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
+    transform: scale(1);
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Background Image untuk Circle */
+/* Hover Efek */
+.facility-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+/* Glow Hover */
+.facility-card:hover::before {
+    filter: brightness(1.2);
+}
+
+/* Background Image */
 .facility-card::before {
     content: "";
     position: absolute;
@@ -348,34 +669,88 @@ header.scrolled .logo {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
     z-index: 0;
 }
 
 /* Set Gambar Background untuk Setiap Facility */
 .facility-card:nth-child(1)::before {
-    background-image: url('https://placehold.co/150x150');
+    background-image: url('/assets/Facilities/Teacher.png');
 }
 
 .facility-card:nth-child(2)::before {
-    background-image: url('https://placehold.co/150x150');
+    background-image: url('/assets/Facilities/Untitled\ design.png');
 }
 
 .facility-card:nth-child(3)::before {
-    background-image: url('https://placehold.co/150x150'); 
+    background-image: url('/assets/Facilities/Classroom.png');
 }
 
-/* Facility Text */
+.facility-card:nth-child(4)::before {
+    background-image: url('/assets/Facilities/Aula.png');
+}
+.facility-card:nth-child(5)::before {
+    background-image: url('/assets/Facilities/Musholla.png');
+}
+.facility-card:nth-child(6)::before {
+    background-image: url('/assets/Facilities/labkom.jpg');
+}
+.facility-card:nth-child(7)::before {
+    background-image: url('/assets/Facilities/LCDProjector.jpg');
+}
+
+/* Overlay Efek */
+.facility-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Efek Overlay */
+.facility-card:hover::after {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* === TEXT DI FACILITY CARD === */
 .facility-card p {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    z-index: 1; 
-    padding: 5px 10px;
+    color: white;
+    margin-bottom: 20px;
+    z-index: 2;
+    padding: 10px 14px;
     border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* RESPONSIVE */
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+    .facilities {
+        padding: 80px 5%;
+    }
+
+    .facilities h2 {
+        font-size: 32px;
+    }
+
+    .facility-card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .facility-card p {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .facilities {
         padding: 60px 5%;
@@ -391,28 +766,271 @@ header.scrolled .logo {
     }
 
     .facility-card {
-        width: 120px;
-        height: 120px;
-    }
-
-    .facility-card::before {
-        background-size: contain;
+        width: 150px;
+        height: 150px;
     }
 
     .facility-card p {
         font-size: 14px;
+        margin-bottom: 10px;
     }
 }
 
-/* MESSAGE US SECTION */
-#message-us {
-    padding: 70px 20px;
-    background-color: #e3f2fd;
-    border-radius: 10px;
-    text-align: center;
+/* === ANIMATION === */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* GRID CONTAINER */
+@keyframes waveAnimation {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes gridAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 120px; }
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+}
+
+/* === Achievements Section (Tetap dengan Warna Awal) === */
+#achievements {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #003366, #0077b6); /* Warna awal tetap */
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* === Title Section === */
+#achievements h2 {
+    font-size: 36px;
+    color: #FFDD95; /* Warm Gold */
+    font-weight: bold;
+    margin-bottom: 25px;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+    text-transform: uppercase;
+    font-family: 'Lora', serif;
+}
+
+/* Garis bawah animasi */
+#achievements h2::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 5px;
+    background: #FFA559; /* Sunset Orange */
+    margin: 12px auto;
+    border-radius: 3px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* === Paragraf (Sekarang Lebih Kontras) === */
+#achievements p {
+    font-size: 18px;
+    color: #FDF6EC; /* Soft Cream */
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-weight: 500;
+}
+
+/* === Container untuk Cards === */
+.achievement-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* === Achievement Card (Warna Baru: Lavender Mist) === */
+.achievement-card {
+    background: #EAE6FF; /* Lavender Mist */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    max-width: 360px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    animation: zoomIn 0.8s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(0, 119, 182, 0.2); /* Transparan biru */
+}
+
+/* Efek Hover */
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Glow Hover */
+.achievement-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 119, 182, 0.08);
+    transition: 0.4s ease-in-out;
+    z-index: 0;
+}
+
+/* Hover Effect */
+.achievement-card:hover::before {
+    background: rgba(0, 119, 182, 0.15);
+}
+
+/* Gambar di dalam card */
+.achievement-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Efek Hover di Gambar */
+.achievement-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Judul dalam card */
+.achievement-card h3 {
+    font-size: 24px;
+    color: #2C3E50; /* Midnight Blue */
+    font-weight: bold;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+    font-family: 'Lora', serif;
+}
+
+/* Paragraf dalam card (FIXED - Kontras & Mudah Dibaca) */
+.achievement-card p {
+    font-size: 17px;
+    color: #333; /* Dark Gray */
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+    #achievements {
+        padding: 60px 20px;
+        margin: 80px auto;
+    }
+
+    .achievement-card {
+        max-width: 100%;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #achievements {
+        padding: 50px 15px;
+        margin: 70px auto;
+    }
+
+    .achievement-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .achievement-card {
+        padding: 20px;
+    }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 140px; }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* === MESSAGE US SECTION === */
+#message-us {
+    padding: 70px 20px;
+    background-color: #f9fbfd; /* Soft white */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* === HEADER STYLE === */
+#message-us h2 {
+    font-size: 32px;
+    color: #004080;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* === GRID CONTAINER === */
 .message-container {
     max-width: 1100px;
     width: 100%;
@@ -424,41 +1042,64 @@ header.scrolled .logo {
     margin-top: 30px;
 }
 
-/* FORM STYLE */
+/* === FORM STYLE === */
 #message-form {
     background: white;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
     text-align: left;
     width: 100%;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* LABEL & INPUT */
+/* Hover effect */
+#message-form:hover {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === LABEL & INPUT STYLE === */
 label {
-    font-weight: bold;
+    font-weight: 600;
     display: block;
     margin-bottom: 8px;
     font-size: 17px;
+    color: #004080;
+    text-transform: capitalize;
 }
 
 input, textarea {
     width: 100%;
     padding: 14px;
-    border: 2px solid #bbb;
+    border: 2px solid rgba(0, 123, 255, 0.2);
     border-radius: 8px;
     font-size: 17px;
+    transition: 0.3s ease-in-out;
+    background: #f4f8fc;
+    color: #333;
+    font-weight: 500;
+    outline: none;
 }
 
+/* Fokus di input */
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* === TEXTAREA CUSTOM === */
 textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-/* BUTTON */
+/* === BUTTON STYLE === */
 button {
     width: 100%;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     border: none;
     padding: 14px;
@@ -466,20 +1107,79 @@ button {
     border-radius: 8px;
     font-size: 18px;
     font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
+    transition: background 0.3s, transform 0.2s ease-in-out;
+    text-transform: uppercase;
 }
 
+/* Hover effect */
 button:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #0056b3, #004080);
     transform: scale(1.05);
 }
 
-/* OUTPUT STYLE */
+/* === RADIO BUTTONS STYLE === */
+.gender-options {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    color: #004080;
+    margin-top: 10px;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Focused radio button */
+.gender-options input[type="radio"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* === DATE INPUT CUSTOM STYLE === */
+input[type="date"] {
+    width: 100%;
+    padding: 14px;
+    background: #f4f8fc;
+    color: #333;
+    border: 2px solid rgba(0, 123, 255, 0.2);
+    border-radius: 8px;
+    font-size: 17px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+input[type="date"]:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Styling the calendar popup */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 5px;
+    color: white;
+}
+
+/* === OUTPUT STYLE === */
 #message-output {
     background: white;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
     width: 100%;
 }
@@ -487,13 +1187,23 @@ button:hover {
 #message-output p {
     font-size: 17px;
     margin-bottom: 12px;
+    color: #222;
 }
 
-/* RESPONSIVE */
+#message-output span {
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 1024px) {
     .message-container {
         max-width: 900px;
         gap: 30px;
+    }
+
+    #message-us h2 {
+        font-size: 28px;
     }
 }
 
@@ -511,6 +1221,24 @@ button:hover {
     input, textarea {
         font-size: 16px;
         padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    #message-us {
+        padding: 50px 15px;
+    }
+}
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
