@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://placehold.co/50x50" alt="Logo" width="50" height="50">
+                <span>SMAS Avisena Jabon</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="profile.html">Our Profile</a>
+                <a href="#">Achievement</a>
+                <a href="#message-us">Message Us</a>
+            </nav>
+
+            <!-- Burger Menu -->
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 id="welcome-message">Hi, Welcome To Website</h1>
+                <p>Ini adalah website latihan pertama</p>
+                <a href="#" class="cta">Explore More</a>
+            </div>
+        </section>        
+
+        <!-- Facilities Section -->
+        <section class="facilities">
+            <h2>Our Facilities</h2>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <img src="https://placehold.co/100x100" alt="Professional Teacher">
+                    </div>
+                    <p>Professional Teacher</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <img src="https://placehold.co/100x100" alt="Sport Field">
+                    </div>
+                    <p>Sport Field</p>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-icon">
+                        <img src="https://placehold.co/100x100" alt="Classroom">
+                    </div>
+                    <p>Classroom</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Us -->
+        <section id="message-us">
+            <h2>Message Us</h2>
+            <div class="message-container">
+                <form id="message-form">
+                    <div>
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div>
+                        <label for="dob">Tanggal Lahir</label>
+                        <input type="date" id="dob" required>
+                    </div>
+                    <div>
+                        <label>Jenis Kelamin</label>
+                        <label>
+                            <input type="radio" name="gender" value="Laki-Laki" required> Laki-Laki
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Perempuan" required> Perempuan
+                        </label>
+                    </div>
+                    <div>
+                        <label for="message">Pesan</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <div id="message-output">
+                    <p>Current time : <span id="current-time"></span></p>
+                    <p>Nama : <span id="output-name"></span></p>
+                    <p>Tanggal Lahir : <span id="output-dob"></span></p>
+                    <p>Jenis Kelamin : <span id="output-gender"></span></p>
+                    <p>Pesan : <span id="output-message"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+            <p>By Ach. Miftakhul Huda</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/scripts.js"></script>
+
+</body>
+</html>
