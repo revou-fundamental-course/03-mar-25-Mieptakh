@@ -573,89 +573,81 @@ header.scrolled {
 .facilities {
     text-align: center;
     padding: 120px 10%;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff); /* Gradient yang dinamis */
+    background: linear-gradient(135deg, #001f3f, #003366, #004080);
     position: relative;
     overflow: hidden;
-    animation: waveAnimation 4s ease-in-out infinite;
 }
 
-/* Dekorasi Bubble Floating */
+/* Animated Floating Bubbles */
 .facilities::before,
 .facilities::after {
     content: "";
     position: absolute;
-    width: 120px;
-    height: 120px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    opacity: 0.5;
-    filter: blur(30px);
-    animation: float 6s infinite alternate ease-in-out;
+    filter: blur(40px);
+    animation: floatAnimation 8s infinite alternate ease-in-out;
 }
 
 .facilities::before {
-    top: -50px;
-    left: -60px;
+    top: -60px;
+    left: 10%;
 }
 
 .facilities::after {
-    bottom: -50px;
-    right: -60px;
+    bottom: -60px;
+    right: 10%;
 }
 
-/* === JUDUL SECTION === */
+/* SECTION TITLE */
 .facilities h2 {
-    font-size: 40px;
-    color: #004080;
+    font-size: 45px;
     font-weight: bold;
     text-transform: uppercase;
+    color: white;
     margin-bottom: 50px;
-    position: relative;
-    display: inline-block;
-    animation: fadeInUp 1s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1.2s ease-in-out;
+    background: linear-gradient(90deg, #ff4081, #00bcd4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* === FACILITY GRID === */
+/* FACILITY GRID */
 .facility-grid {
     display: flex;
-    gap: 40px;
+    gap: 50px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: gridAppear 2s ease-in-out;
+    animation: gridAppear 1.5s ease-in-out;
 }
 
-/* === FACILITY CARD === */
+/* FACILITY CARD */
 .facility-card {
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
     text-align: center;
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    transform: scale(1);
-    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateX(0) rotateY(0);
+    will-change: transform;
 }
 
-/* Hover Efek */
+/* Hover Effect - 3D Parallax */
 .facility-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.3);
-    filter: brightness(1.1);
-}
-
-/* Glow Hover */
-.facility-card:hover::before {
-    filter: brightness(1.2);
+    transform: scale(1.1) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 /* Background Image */
@@ -671,33 +663,15 @@ header.scrolled {
     background-repeat: no-repeat;
     transition: 0.3s ease-in-out;
     z-index: 0;
+    opacity: 0.8;
 }
 
-/* Set Gambar Background untuk Setiap Facility */
-.facility-card:nth-child(1)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Teacher.png');
-}
-
-.facility-card:nth-child(2)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Untitled\ design.png');
-}
-
-.facility-card:nth-child(3)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Classroom.png');
-}
-
-.facility-card:nth-child(4)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Aula.png');
-}
-.facility-card:nth-child(5)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Musholla.png');
-}
-.facility-card:nth-child(6)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/labkom.jpg');
-}
-.facility-card:nth-child(7)::before {
-    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/LCDProjector.jpg');
-}
+/* Set Background Image */
+.facility-card:nth-child(1)::before { background-image: url('/path/teacher.png'); }
+.facility-card:nth-child(2)::before { background-image: url('/path/classroom.png'); }
+.facility-card:nth-child(3)::before { background-image: url('/path/aula.png'); }
+.facility-card:nth-child(4)::before { background-image: url('/path/musholla.png'); }
+.facility-card:nth-child(5)::before { background-image: url('/path/labkom.jpg'); }
 
 /* Overlay Efek */
 .facility-card::after {
@@ -707,121 +681,59 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
     transition: 0.3s ease-in-out;
 }
 
 /* Hover Efek Overlay */
 .facility-card:hover::after {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.2);
 }
 
-/* === TEXT DI FACILITY CARD === */
+/* TEXT IN FACILITY CARD */
 .facility-card p {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     margin-bottom: 20px;
     z-index: 2;
-    padding: 10px 14px;
+    padding: 12px 16px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* === RESPONSIVE DESIGN === */
+/* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
-    .facilities {
-        padding: 80px 5%;
-    }
-
-    .facilities h2 {
-        font-size: 32px;
-    }
-
-    .facility-card {
-        width: 180px;
-        height: 180px;
-    }
-
-    .facility-card p {
-        font-size: 16px;
-    }
+    .facilities { padding: 80px 5%; }
+    .facilities h2 { font-size: 38px; }
+    .facility-card { width: 200px; height: 200px; }
+    .facility-card p { font-size: 18px; }
 }
 
 @media (max-width: 768px) {
-    .facilities {
-        padding: 60px 5%;
-    }
-
-    .facilities h2 {
-        font-size: 28px;
-    }
-
-    .facility-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .facility-card {
-        width: 150px;
-        height: 150px;
-    }
-
-    .facility-card p {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
+    .facilities { padding: 60px 5%; }
+    .facilities h2 { font-size: 30px; }
+    .facility-grid { flex-direction: column; align-items: center; }
+    .facility-card { width: 180px; height: 180px; }
+    .facility-card p { font-size: 16px; margin-bottom: 10px; }
 }
 
-/* === ANIMATION === */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes waveAnimation {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
-}
-
-@keyframes gridAppear {
-    0% {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* === ANIMATIONS === */
+/* ANIMATIONS */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideIn {
-    from { width: 0; }
-    to { width: 120px; }
+@keyframes gridAppear {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(20px); }
+@keyframes floatAnimation {
+    from { transform: translateY(0); opacity: 0.6; }
+    to { transform: translateY(20px); opacity: 0.3; }
 }
 
 /* === Achievements Section (Tetap dengan Warna Awal) === */
