@@ -10,21 +10,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const burgerMenu = document.querySelector(".burger-menu");
     const navLinks = document.querySelector(".nav-links");
+    const notification = document.getElementById("notification");
 
-    // Toggle menu saat tombol burger diklik
+    // Toggle menu saat tombol burger diklik dengan efek transisi
     burgerMenu.addEventListener("click", function () {
         navLinks.classList.toggle("active");
+        burgerMenu.classList.toggle("open");
     });
 
-    // Fungsi untuk memperbarui waktu secara real-time
+    // Fungsi untuk memperbarui waktu secara real-time dengan animasi
     function updateTime() {
         const now = new Date();
-        currentTime.textContent = now.toLocaleString();
+        currentTime.style.opacity = "0";
+        setTimeout(() => {
+            currentTime.textContent = now.toLocaleString();
+            currentTime.style.opacity = "1";
+        }, 300);
     }
 
     setInterval(updateTime, 1000);
     updateTime();
 
+    // Fungsi untuk menampilkan notifikasi
+    function showNotification(message) {
+        notification.textContent = message;
+        notification.classList.add("show");
+
+        setTimeout(() => {
+            notification.classList.remove("show");
+        }, 3000);
+    }
+
+    // Event listener untuk form submit
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         
@@ -43,7 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
         outputDob.textContent = dob || "-";
         outputGender.textContent = gender ? gender.value : "-";
         outputMessage.textContent = message || "-";
-        
+
+        // Menampilkan notifikasi
+        showNotification("Pesan berhasil dikirim!");
+
         form.reset();
     });
 });
