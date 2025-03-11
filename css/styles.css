@@ -569,49 +569,17 @@ header.scrolled {
     }
 }
 
-/* === LOADING ANIMATION === */
-@keyframes loadingAnimation {
-    0% { opacity: 0; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-.loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #80d0ff, #bbdefb, #e3f2fd);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    animation: fadeOut 1s ease-in-out 3s forwards;
-}
-
-.loading span {
-    font-size: 28px;
-    font-weight: bold;
-    color: #004080;
-    animation: loadingAnimation 1.5s infinite alternate;
-}
-
-/* === FADE OUT EFFECT === */
-@keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
-}
-
 /* === FACILITIES SECTION === */
 .facilities {
     text-align: center;
     padding: 120px 10%;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff);
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff); /* Gradient yang dinamis */
     position: relative;
     overflow: hidden;
+    animation: waveAnimation 4s ease-in-out infinite;
 }
 
-/* Bubble Floating Decoration */
+/* Dekorasi Bubble Floating */
 .facilities::before,
 .facilities::after {
     content: "";
@@ -620,32 +588,32 @@ header.scrolled {
     height: 120px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.5;
     filter: blur(30px);
-    animation: float 5s infinite alternate ease-in-out;
+    animation: float 6s infinite alternate ease-in-out;
 }
 
 .facilities::before {
     top: -50px;
-    left: -40px;
+    left: -60px;
 }
 
 .facilities::after {
     bottom: -50px;
-    right: -40px;
+    right: -60px;
 }
 
-/* === SECTION TITLE === */
+/* === JUDUL SECTION === */
 .facilities h2 {
-    font-size: 42px;
+    font-size: 40px;
     color: #004080;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 50px;
     position: relative;
     display: inline-block;
-    animation: fadeInUp 1.2s ease-in-out;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 /* === FACILITY GRID === */
@@ -661,12 +629,12 @@ header.scrolled {
 .facility-card {
     background: white;
     border-radius: 50%;
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.4s ease-in-out;
     cursor: pointer;
     text-align: center;
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -675,14 +643,19 @@ header.scrolled {
     overflow: hidden;
     transform: scale(1);
     background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Effect */
+/* Hover Efek */
 .facility-card:hover {
-    transform: scale(1.1) rotate(3deg);
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
-    filter: brightness(1.15);
+    transform: scale(1.1);
+    box-shadow: 0px 18px 35px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+/* Glow Hover */
+.facility-card:hover::before {
+    filter: brightness(1.2);
 }
 
 /* Background Image */
@@ -700,16 +673,19 @@ header.scrolled {
     z-index: 0;
 }
 
-/* Set Background Image */
+/* Set Gambar Background untuk Setiap Facility */
 .facility-card:nth-child(1)::before {
     background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Teacher.png');
 }
+
 .facility-card:nth-child(2)::before {
     background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Untitled\ design.png');
 }
+
 .facility-card:nth-child(3)::before {
     background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Classroom.png');
 }
+
 .facility-card:nth-child(4)::before {
     background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Aula.png');
 }
@@ -723,7 +699,7 @@ header.scrolled {
     background-image: url('/03-mar-25-Mieptakh/assets/Facilities/LCDProjector.jpg');
 }
 
-/* Overlay Effect */
+/* Overlay Efek */
 .facility-card::after {
     content: "";
     position: absolute;
@@ -736,23 +712,23 @@ header.scrolled {
     transition: 0.3s ease-in-out;
 }
 
-/* Hover Effect Overlay */
+/* Hover Efek Overlay */
 .facility-card:hover::after {
     background: rgba(0, 0, 0, 0.15);
 }
 
-/* === FACILITY TEXT === */
+/* === TEXT DI FACILITY CARD === */
 .facility-card p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     margin-bottom: 20px;
     z-index: 2;
-    padding: 12px 16px;
+    padding: 10px 14px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -762,7 +738,7 @@ header.scrolled {
     }
 
     .facilities h2 {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .facility-card {
@@ -781,7 +757,7 @@ header.scrolled {
     }
 
     .facilities h2 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .facility-grid {
@@ -790,13 +766,45 @@ header.scrolled {
     }
 
     .facility-card {
-        width: 160px;
-        height: 160px;
+        width: 150px;
+        height: 150px;
     }
 
     .facility-card p {
         font-size: 14px;
         margin-bottom: 10px;
+    }
+}
+
+/* === ANIMATION === */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes gridAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -806,14 +814,14 @@ header.scrolled {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float {
-    from { transform: translateY(0); }
-    to { transform: translateY(15px); }
+@keyframes slideIn {
+    from { width: 0; }
+    to { width: 120px; }
 }
 
-@keyframes gridAppear {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
 }
 
 /* === Achievements Section (Tetap dengan Warna Awal) === */
