@@ -242,7 +242,7 @@ header.scrolled {
     position: relative;
     width: 100%;
     height: 100vh; 
-    background: url("/assets/hero/Untitled\ design.png") no-repeat center center;
+    background: url("assets/hero/Untitled\ design.png") no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -675,28 +675,28 @@ header.scrolled {
 
 /* Set Gambar Background untuk Setiap Facility */
 .facility-card:nth-child(1)::before {
-    background-image: url('/assets/Facilities/Teacher.png');
+    background-image: url('assets/Facilities/Teacher.png');
 }
 
 .facility-card:nth-child(2)::before {
-    background-image: url('/assets/Facilities/Untitled\ design.png');
+    background-image: url('assets/Facilities/Untitled\ design.png');
 }
 
 .facility-card:nth-child(3)::before {
-    background-image: url('/assets/Facilities/Classroom.png');
+    background-image: url('assets/Facilities/Classroom.png');
 }
 
 .facility-card:nth-child(4)::before {
-    background-image: url('/assets/Facilities/Aula.png');
+    background-image: url('assets/Facilities/Aula.png');
 }
 .facility-card:nth-child(5)::before {
-    background-image: url('/assets/Facilities/Musholla.png');
+    background-image: url('assets/Facilities/Musholla.png');
 }
 .facility-card:nth-child(6)::before {
-    background-image: url('/assets/Facilities/labkom.jpg');
+    background-image: url('assets/Facilities/labkom.jpg');
 }
 .facility-card:nth-child(7)::before {
-    background-image: url('/assets/Facilities/LCDProjector.jpg');
+    background-image: url('assets/Facilities/LCDProjector.jpg');
 }
 
 /* Overlay Efek */
