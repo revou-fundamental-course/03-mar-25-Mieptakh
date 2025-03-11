@@ -569,85 +569,120 @@ header.scrolled {
     }
 }
 
+/* === LOADING ANIMATION === */
+@keyframes loadingAnimation {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #80d0ff, #bbdefb, #e3f2fd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+.loading span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #004080;
+    animation: loadingAnimation 1.5s infinite alternate;
+}
+
+/* === FADE OUT EFFECT === */
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
 /* === FACILITIES SECTION === */
 .facilities {
     text-align: center;
     padding: 120px 10%;
-    background: linear-gradient(135deg, #001f3f, #003366, #004080);
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff);
     position: relative;
     overflow: hidden;
 }
 
-/* Animated Floating Bubbles */
+/* Bubble Floating Decoration */
 .facilities::before,
 .facilities::after {
     content: "";
     position: absolute;
-    width: 150px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.15);
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    filter: blur(40px);
-    animation: floatAnimation 8s infinite alternate ease-in-out;
+    opacity: 0.6;
+    filter: blur(30px);
+    animation: float 5s infinite alternate ease-in-out;
 }
 
 .facilities::before {
-    top: -60px;
-    left: 10%;
+    top: -50px;
+    left: -40px;
 }
 
 .facilities::after {
-    bottom: -60px;
-    right: 10%;
+    bottom: -50px;
+    right: -40px;
 }
 
-/* SECTION TITLE */
+/* === SECTION TITLE === */
 .facilities h2 {
-    font-size: 45px;
+    font-size: 42px;
+    color: #004080;
     font-weight: bold;
     text-transform: uppercase;
-    color: white;
     margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
     animation: fadeInUp 1.2s ease-in-out;
-    background: linear-gradient(90deg, #ff4081, #00bcd4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* FACILITY GRID */
+/* === FACILITY GRID === */
 .facility-grid {
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: gridAppear 1.5s ease-in-out;
+    animation: gridAppear 2s ease-in-out;
 }
 
-/* FACILITY CARD */
+/* === FACILITY CARD === */
 .facility-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s ease-in-out;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
     cursor: pointer;
     text-align: center;
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     position: relative;
     overflow: hidden;
-    transform: perspective(1000px) rotateX(0) rotateY(0);
-    will-change: transform;
+    transform: scale(1);
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Hover Effect - 3D Parallax */
+/* Hover Effect */
 .facility-card:hover {
-    transform: scale(1.1) rotateX(5deg) rotateY(-5deg);
-    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.35);
+    filter: brightness(1.15);
 }
 
 /* Background Image */
@@ -663,17 +698,32 @@ header.scrolled {
     background-repeat: no-repeat;
     transition: 0.3s ease-in-out;
     z-index: 0;
-    opacity: 0.8;
 }
 
 /* Set Background Image */
-.facility-card:nth-child(1)::before { background-image: url('/path/teacher.png'); }
-.facility-card:nth-child(2)::before { background-image: url('/path/classroom.png'); }
-.facility-card:nth-child(3)::before { background-image: url('/path/aula.png'); }
-.facility-card:nth-child(4)::before { background-image: url('/path/musholla.png'); }
-.facility-card:nth-child(5)::before { background-image: url('/path/labkom.jpg'); }
+.facility-card:nth-child(1)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Teacher.png');
+}
+.facility-card:nth-child(2)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Untitled\ design.png');
+}
+.facility-card:nth-child(3)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Classroom.png');
+}
+.facility-card:nth-child(4)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Aula.png');
+}
+.facility-card:nth-child(5)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/Musholla.png');
+}
+.facility-card:nth-child(6)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/labkom.jpg');
+}
+.facility-card:nth-child(7)::before {
+    background-image: url('/03-mar-25-Mieptakh/assets/Facilities/LCDProjector.jpg');
+}
 
-/* Overlay Efek */
+/* Overlay Effect */
 .facility-card::after {
     content: "";
     position: absolute;
@@ -681,17 +731,17 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
     transition: 0.3s ease-in-out;
 }
 
-/* Hover Efek Overlay */
+/* Hover Effect Overlay */
 .facility-card:hover::after {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
 }
 
-/* TEXT IN FACILITY CARD */
+/* === FACILITY TEXT === */
 .facility-card p {
     font-size: 20px;
     font-weight: bold;
@@ -702,38 +752,68 @@ header.scrolled {
     border-radius: 5px;
     transition: 0.3s ease-in-out;
     text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
 
-/* RESPONSIVE DESIGN */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 1024px) {
-    .facilities { padding: 80px 5%; }
-    .facilities h2 { font-size: 38px; }
-    .facility-card { width: 200px; height: 200px; }
-    .facility-card p { font-size: 18px; }
+    .facilities {
+        padding: 80px 5%;
+    }
+
+    .facilities h2 {
+        font-size: 36px;
+    }
+
+    .facility-card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .facility-card p {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 768px) {
-    .facilities { padding: 60px 5%; }
-    .facilities h2 { font-size: 30px; }
-    .facility-grid { flex-direction: column; align-items: center; }
-    .facility-card { width: 180px; height: 180px; }
-    .facility-card p { font-size: 16px; margin-bottom: 10px; }
+    .facilities {
+        padding: 60px 5%;
+    }
+
+    .facilities h2 {
+        font-size: 30px;
+    }
+
+    .facility-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .facility-card {
+        width: 160px;
+        height: 160px;
+    }
+
+    .facility-card p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
 }
 
-/* ANIMATIONS */
+/* === ANIMATIONS === */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(15px); }
+}
+
 @keyframes gridAppear {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes floatAnimation {
-    from { transform: translateY(0); opacity: 0.6; }
-    to { transform: translateY(20px); opacity: 0.3; }
 }
 
 /* === Achievements Section (Tetap dengan Warna Awal) === */
