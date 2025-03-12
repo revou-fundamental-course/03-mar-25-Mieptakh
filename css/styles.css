@@ -17,7 +17,7 @@ body {
 
 /* HEADER */
 header {
-    background: rgba(0, 0, 0, 0.2); /* Transparansi hitam lebih lembut */
+    background: rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
@@ -25,16 +25,16 @@ header {
     z-index: 1000;
     padding: 20px 0;
     transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(8px); /* Blur lebih lembut */
-    -webkit-backdrop-filter: blur(8px); /* Safari */
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih ringan */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Header saat digulir */
 header.scrolled {
-    background: rgba(0, 122, 204, 0.7); /* Warna biru lebih lembut */
-    backdrop-filter: blur(12px); /* Blur lebih kuat saat scroll */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih tegas */
+    background: rgba(0, 122, 204, 0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* CONTAINER */
@@ -52,7 +52,7 @@ header.scrolled {
     align-items: center;
     font-size: 26px;
     font-weight: 600;
-    color: #f1f1f1; /* Warna putih lembut */
+    color: #f1f1f1;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: all 0.3s ease-in-out;
@@ -275,7 +275,7 @@ header.scrolled {
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 60px; /* Ukuran font lebih besar */
+    font-size: 60px;
     font-weight: bold;
     line-height: 1.2;
     text-transform: capitalize;
@@ -286,7 +286,7 @@ header.scrolled {
 
 /* Tambahan efek hover untuk heading */
 .hero h1:hover {
-    transform: translateX(10px); /* Efek bergerak halus saat hover */
+    transform: translateX(10px);
 }
 
 /* Parallax Effect on Hero Content */
@@ -332,11 +332,11 @@ header.scrolled {
     }
 
     .hero h1 {
-        font-size: 36px; /* Ukuran font lebih kecil untuk mobile */
+        font-size: 36px;
     }
 
     .hero p {
-        font-size: 18px; /* Ukuran font lebih kecil untuk mobile */
+        font-size: 18px;
     }
 
     .hero .cta {
@@ -381,7 +381,7 @@ header.scrolled {
 /* === SECTION ABOUT US === */
 #about-us {
     max-width: 1100px;
-    margin: 100px auto; /* Jarak atas-bawah biar proporsional */
+    margin: 100px auto;
     padding: 60px 40px;
     background: linear-gradient(135deg, #ffffff, #f9f9f9);
     border-radius: 15px;
@@ -573,7 +573,7 @@ header.scrolled {
 .facilities {
     text-align: center;
     padding: 120px 10%;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff); /* Gradient yang dinamis */
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb, #80d0ff);
     position: relative;
     overflow: hidden;
     animation: waveAnimation 4s ease-in-out infinite;
@@ -824,12 +824,12 @@ header.scrolled {
     to { transform: translateY(20px); }
 }
 
-/* === Achievements Section (Tetap dengan Warna Awal) === */
+/* === Achievements Section === */
 #achievements {
     max-width: 1200px;
     margin: 100px auto;
     padding: 80px 40px;
-    background: linear-gradient(135deg, #003366, #0077b6); /* Warna awal tetap */
+    background: linear-gradient(135deg, #003366, #0077b6);
     border-radius: 15px;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1s ease-in-out;
@@ -842,7 +842,7 @@ header.scrolled {
 /* === Title Section === */
 #achievements h2 {
     font-size: 36px;
-    color: #FFDD95; /* Warm Gold */
+    color: #FFDD95;
     font-weight: bold;
     margin-bottom: 25px;
     position: relative;
@@ -857,16 +857,16 @@ header.scrolled {
     display: block;
     width: 140px;
     height: 5px;
-    background: #FFA559; /* Sunset Orange */
+    background: #FFA559;
     margin: 12px auto;
     border-radius: 3px;
     animation: slideIn 1s ease-in-out;
 }
 
-/* === Paragraf (Sekarang Lebih Kontras) === */
+/* === Paragraf === */
 #achievements p {
     font-size: 18px;
-    color: #FDF6EC; /* Soft Cream */
+    color: #FDF6EC;
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto 50px;
@@ -881,9 +881,9 @@ header.scrolled {
     justify-content: center;
 }
 
-/* === Achievement Card (Warna Baru: Lavender Mist) === */
+/* === Achievement Card === */
 .achievement-card {
-    background: #EAE6FF; /* Lavender Mist */
+    background: #EAE6FF;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
@@ -898,7 +898,7 @@ header.scrolled {
     animation: zoomIn 0.8s ease-in-out;
     position: relative;
     overflow: hidden;
-    border: 3px solid rgba(0, 119, 182, 0.2); /* Transparan biru */
+    border: 3px solid rgba(0, 119, 182, 0.2);
 }
 
 /* Efek Hover */
@@ -941,7 +941,7 @@ header.scrolled {
 /* Judul dalam card */
 .achievement-card h3 {
     font-size: 24px;
-    color: #2C3E50; /* Midnight Blue */
+    color: #2C3E50;
     font-weight: bold;
     margin-bottom: 12px;
     position: relative;
@@ -949,10 +949,10 @@ header.scrolled {
     font-family: 'Lora', serif;
 }
 
-/* Paragraf dalam card (FIXED - Kontras & Mudah Dibaca) */
+/* Paragraf dalam card*/
 .achievement-card p {
     font-size: 17px;
-    color: #333; /* Dark Gray */
+    color: #333;
     line-height: 1.7;
     position: relative;
     z-index: 1;
@@ -1011,7 +1011,7 @@ header.scrolled {
 /* === MESSAGE US SECTION === */
 #message-us {
     padding: 70px 20px;
-    background-color: #f9fbfd; /* Soft white */
+    background-color: #f9fbfd;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
