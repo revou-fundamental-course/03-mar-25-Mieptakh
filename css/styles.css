@@ -1006,10 +1006,10 @@ span:hover {
 /* === MESSAGE US SECTION === */
 #message-us {
     padding: 70px 20px;
-    background-color: #f9fbfd;
+    background: linear-gradient(135deg, #f0f5ff, #e6efff);
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08);
     animation: fadeIn 1s ease-in-out;
     max-width: 1200px;
     margin: 0 auto;
@@ -1017,12 +1017,13 @@ span:hover {
 
 /* === HEADER STYLE === */
 #message-us h2 {
-    font-size: 32px;
-    color: #004080;
+    font-size: 30px;
+    color: #003366;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    font-family: 'Lora', serif;
 }
 
 /* === GRID CONTAINER === */
@@ -1031,7 +1032,7 @@ span:hover {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 40px;
     align-items: start;
     margin: auto;
     margin-top: 30px;
@@ -1040,40 +1041,40 @@ span:hover {
 /* === FORM STYLE === */
 #message-form {
     background: white;
-    padding: 35px;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
     text-align: left;
     width: 100%;
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 /* Hover effect */
 #message-form:hover {
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 /* === LABEL & INPUT STYLE === */
 label {
     font-weight: 600;
     display: block;
-    margin-bottom: 8px;
-    font-size: 17px;
-    color: #004080;
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #003366;
     text-transform: capitalize;
 }
 
 input, textarea {
     width: 100%;
-    padding: 14px;
-    border: 2px solid rgba(0, 123, 255, 0.2);
+    padding: 12px;
+    border: 2px solid rgba(0, 102, 204, 0.2);
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 16px;
     transition: 0.3s ease-in-out;
-    background: #f4f8fc;
+    background: #f8fbff;
     color: #333;
     font-weight: 500;
     outline: none;
@@ -1081,8 +1082,8 @@ input, textarea {
 
 /* Fokus di input */
 input:focus, textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
+    border-color: #0066cc;
+    box-shadow: 0px 0px 10px rgba(0, 102, 204, 0.3);
 }
 
 /* === TEXTAREA CUSTOM === */
@@ -1094,13 +1095,13 @@ textarea {
 /* === BUTTON STYLE === */
 button {
     width: 100%;
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, #0066cc, #004080);
     color: white;
     border: none;
-    padding: 14px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     transition: background 0.3s, transform 0.2s ease-in-out;
     text-transform: uppercase;
@@ -1108,93 +1109,93 @@ button {
 
 /* Hover effect */
 button:hover {
-    background: linear-gradient(135deg, #0056b3, #004080);
+    background: linear-gradient(135deg, #004080, #002b5c);
     transform: scale(1.05);
 }
 
 /* === RADIO BUTTONS STYLE === */
 .gender-options {
     display: flex;
-    gap: 20px;
-    font-size: 16px;
-    color: #004080;
-    margin-top: 10px;
+    gap: 15px;
+    font-size: 15px;
+    color: #003366;
+    margin-top: 8px;
 }
 
 .gender-options label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
 }
 
 .gender-options input[type="radio"] {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    border: 2px solid #007bff;
+    border: 2px solid #0066cc;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
 /* Focused radio button */
 .gender-options input[type="radio"]:focus {
-    border-color: #0056b3;
+    border-color: #004080;
     outline: none;
 }
 
 /* === DATE INPUT CUSTOM STYLE === */
 input[type="date"] {
     width: 100%;
-    padding: 14px;
-    background: #f4f8fc;
+    padding: 12px;
+    background: #f8fbff;
     color: #333;
-    border: 2px solid rgba(0, 123, 255, 0.2);
+    border: 2px solid rgba(0, 102, 204, 0.2);
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 16px;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
 input[type="date"]:focus {
-    border-color: #007bff;
-    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
+    border-color: #0066cc;
+    box-shadow: 0px 0px 10px rgba(0, 102, 204, 0.3);
 }
 
 /* Styling the calendar popup */
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background-color: #007bff;
+    background-color: #0066cc;
     border-radius: 50%;
-    padding: 5px;
+    padding: 4px;
     color: white;
 }
 
 /* === OUTPUT STYLE === */
 #message-output {
     background: white;
-    padding: 35px;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
     text-align: left;
     width: 100%;
 }
 
 #message-output p {
-    font-size: 17px;
-    margin-bottom: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
     color: #222;
 }
 
 #message-output span {
     font-weight: 600;
-    color: #007bff;
+    color: #0066cc;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
     .message-container {
         max-width: 900px;
-        gap: 30px;
+        gap: 25px;
     }
 
     #message-us h2 {
@@ -1214,12 +1215,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     input, textarea {
-        font-size: 16px;
-        padding: 12px;
+        font-size: 15px;
+        padding: 10px;
     }
 
     button {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     #message-us {
@@ -1231,9 +1232,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
