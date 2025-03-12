@@ -17,29 +17,29 @@ body {
 
 /* HEADER */
 header {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
     transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header saat digulir */
 header.scrolled {
-    background: rgba(0, 122, 204, 0.7);
-    backdrop-filter: blur(12px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 122, 204, 0.8);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* CONTAINER */
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -50,26 +50,30 @@ header.scrolled {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 26px;
-    font-weight: 600;
-    color: #f1f1f1;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     transition: all 0.3s ease-in-out;
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     margin-right: 12px;
     transition: all 0.3s ease-in-out;
 }
 
+.logo:hover {
+    transform: scale(1.05);
+}
+
 /* NAVIGATION */
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -92,7 +96,7 @@ header.scrolled {
     height: 3px;
     background-color: #f9c419;
     left: 50%;
-    bottom: -8px;
+    bottom: -5px;
     transition: width 0.3s ease-in-out;
     transform: translateX(-50%);
 }
@@ -109,7 +113,7 @@ header.scrolled {
 /* BURGER MENU */
 .burger-menu {
     display: none;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
     color: #f1f1f1;
     transition: transform 0.3s ease-in-out;
@@ -119,15 +123,32 @@ header.scrolled {
     transform: rotate(90deg);
 }
 
+/* STYLING UNTUK SPAN */
+span {
+    font-weight: bold;
+    color: #f9c419;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+span:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
     header {
-        padding: 18px 0;
+        padding: 12px 0;
     }
 
     .nav-links a {
         font-size: 14px;
         padding: 8px 12px;
+    }
+
+    .logo {
+        font-size: 24px;
     }
 }
 
@@ -136,16 +157,16 @@ header.scrolled {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 65px;
         right: 20px;
-        width: 250px;
+        width: 240px;
         border-radius: 10px;
         text-align: right;
-        padding: 20px;
+        padding: 18px;
         background: rgba(0, 0, 0, 0.3);
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         transition: all 0.4s ease-in-out;
     }
 
@@ -157,13 +178,16 @@ header.scrolled {
     .nav-links a {
         display: block;
         padding: 12px;
-        color: #f1f1f1;
         font-size: 18px;
-        transition: all 0.3s ease-in-out;
     }
 
     .burger-menu {
         display: block;
+    }
+
+    /* SPAN RESPONSIF */
+    span {
+        font-size: 16px;
     }
 }
 
@@ -179,14 +203,21 @@ header.scrolled {
     }
 }
 
-@keyframes navAppear {
-    from {
-        opacity: 0;
-        transform: translateX(10px);
+@keyframes bounce {
+    0% {
+        transform: scale(1);
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -212,30 +243,6 @@ header.scrolled {
     opacity: 0.2;
     transform: scale(1);
 }
-
-/* Burger Menu Animasi */
-.burger-menu {
-    animation: bounce 0.3s ease-in-out;
-}
-
-@keyframes bounce {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(1);
-    }
-    75% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 
 /* HERO SECTION */
 .hero {
@@ -389,28 +396,31 @@ header.scrolled {
     animation: fadeInUp 1s ease-in-out;
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
 /* === BACKGROUND DEKORASI === */
-#about-us::before {
+#about-us::before, #about-us::after {
     content: "";
     position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(10px);
+}
+
+#about-us::before {
     width: 100px;
     height: 100px;
-    background: rgba(0, 95, 153, 0.1);
-    border-radius: 50%;
+    background: rgba(0, 95, 153, 0.2);
     top: -30px;
     left: -30px;
     animation: floating 6s infinite alternate ease-in-out;
 }
 
 #about-us::after {
-    content: "";
-    position: absolute;
     width: 120px;
     height: 120px;
-    background: rgba(0, 95, 153, 0.08);
-    border-radius: 50%;
+    background: rgba(0, 95, 153, 0.15);
     bottom: -40px;
     right: -40px;
     animation: floating 6s infinite alternate-reverse ease-in-out;
@@ -423,9 +433,9 @@ header.scrolled {
     font-weight: bold;
     text-align: center;
     margin-bottom: 25px;
-    position: relative;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
 }
 
 /* GARIS BAWAH H2 */
@@ -443,7 +453,7 @@ header.scrolled {
 /* === SUB-JUDUL === */
 #about-us h3 {
     font-size: 24px;
-    color: #444;
+    color: #333;
     margin-top: 25px;
     font-weight: bold;
     position: relative;
@@ -459,7 +469,11 @@ header.scrolled {
     color: #444;
     text-align: justify;
     margin-bottom: 20px;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#about-us p:hover {
+    color: #005f99;
 }
 
 /* === LIST STYLE === */
@@ -566,6 +580,34 @@ header.scrolled {
     #about-us ul li {
         font-size: 15px;
         padding: 10px 15px;
+    }
+}
+
+/* === SUPER RESPONSIVE === */
+@media (max-width: 480px) {
+    #about-us {
+        padding: 30px 10px;
+        margin: 50px auto;
+    }
+
+    #about-us h2 {
+        font-size: 24px;
+    }
+
+    #about-us h3 {
+        font-size: 18px;
+    }
+
+    #about-us p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #about-us ul li {
+        font-size: 14px;
+        padding: 8px 12px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
