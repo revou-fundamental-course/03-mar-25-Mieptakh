@@ -822,11 +822,11 @@ span:hover {
 /* === Achievements Section === */
 #achievements {
     max-width: 1200px;
-    margin: 80px auto;
-    padding: 70px 35px;
-    background: linear-gradient(135deg, #1E3A5F, #4682B4);
+    margin: 100px auto;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #003366, #0077b6);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     animation: fadeIn 1s ease-in-out;
     text-align: center;
     position: relative;
@@ -836,10 +836,10 @@ span:hover {
 
 /* === Title Section === */
 #achievements h2 {
-    font-size: 34px;
-    color: #F6C453;
+    font-size: 36px;
+    color: #FFDD95;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
     animation: fadeInUp 1s ease-in-out;
     text-transform: uppercase;
@@ -850,42 +850,42 @@ span:hover {
 #achievements h2::after {
     content: "";
     display: block;
-    width: 120px;
-    height: 4px;
-    background: #E97F2E;
-    margin: 10px auto;
+    width: 140px;
+    height: 5px;
+    background: #FFA559;
+    margin: 12px auto;
     border-radius: 3px;
     animation: slideIn 1s ease-in-out;
 }
 
 /* === Paragraf === */
 #achievements p {
-    font-size: 17px;
-    color: #FDF8EE;
+    font-size: 18px;
+    color: #FDF6EC;
     line-height: 1.8;
-    max-width: 750px;
-    margin: 0 auto 45px;
+    max-width: 800px;
+    margin: 0 auto 50px;
     font-weight: 500;
 }
 
 /* === Container untuk Cards === */
 .achievement-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     justify-content: center;
 }
 
 /* === Achievement Card === */
 .achievement-card {
-    background: #F9F5FF;
-    padding: 25px;
+    background: #EAE6FF;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
-    transition: all 0.3s ease-in-out;
-    max-width: 350px;
-    min-height: 400px;
+    transition: all 0.4s ease-in-out;
+    max-width: 360px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -893,13 +893,13 @@ span:hover {
     animation: zoomIn 0.8s ease-in-out;
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(70, 130, 180, 0.2);
+    border: 3px solid rgba(0, 119, 182, 0.2);
 }
 
 /* Efek Hover */
 .achievement-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* Glow Hover */
@@ -910,45 +910,45 @@ span:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(70, 130, 180, 0.08);
-    transition: 0.3s ease-in-out;
+    background: rgba(0, 119, 182, 0.08);
+    transition: 0.4s ease-in-out;
     z-index: 0;
 }
 
 /* Hover Effect */
 .achievement-card:hover::before {
-    background: rgba(70, 130, 180, 0.12);
+    background: rgba(0, 119, 182, 0.15);
 }
 
 /* Gambar di dalam card */
 .achievement-card img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     transition: 0.3s ease-in-out;
 }
 
 /* Efek Hover di Gambar */
 .achievement-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 /* Judul dalam card */
 .achievement-card h3 {
-    font-size: 22px;
-    color: #354A60;
+    font-size: 24px;
+    color: #2C3E50;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     position: relative;
     z-index: 1;
     font-family: 'Lora', serif;
 }
 
-/* Paragraf dalam card */
+/* Paragraf dalam card*/
 .achievement-card p {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.6;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.7;
     position: relative;
     z-index: 1;
     font-weight: 500;
@@ -957,8 +957,8 @@ span:hover {
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1024px) {
     #achievements {
-        padding: 55px 25px;
-        margin: 70px auto;
+        padding: 60px 20px;
+        margin: 80px auto;
     }
 
     .achievement-card {
@@ -969,12 +969,12 @@ span:hover {
 
 @media (max-width: 768px) {
     #achievements {
-        padding: 45px 15px;
-        margin: 60px auto;
+        padding: 50px 15px;
+        margin: 70px auto;
     }
 
     .achievement-container {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .achievement-card {
@@ -995,7 +995,7 @@ span:hover {
 
 @keyframes slideIn {
     from { width: 0; }
-    to { width: 120px; }
+    to { width: 140px; }
 }
 
 @keyframes zoomIn {
@@ -1006,10 +1006,10 @@ span:hover {
 /* === MESSAGE US SECTION === */
 #message-us {
     padding: 70px 20px;
-    background: linear-gradient(135deg, #f0f5ff, #e6efff);
+    background-color: #f9fbfd;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
     max-width: 1200px;
     margin: 0 auto;
@@ -1017,13 +1017,12 @@ span:hover {
 
 /* === HEADER STYLE === */
 #message-us h2 {
-    font-size: 30px;
-    color: #003366;
+    font-size: 32px;
+    color: #004080;
     font-weight: 700;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-family: 'Lora', serif;
+    letter-spacing: 2px;
 }
 
 /* === GRID CONTAINER === */
@@ -1032,7 +1031,7 @@ span:hover {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
     align-items: start;
     margin: auto;
     margin-top: 30px;
@@ -1041,40 +1040,40 @@ span:hover {
 /* === FORM STYLE === */
 #message-form {
     background: white;
-    padding: 30px;
+    padding: 35px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
     text-align: left;
     width: 100%;
     transition: all 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
 }
 
 /* Hover effect */
 #message-form:hover {
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* === LABEL & INPUT STYLE === */
 label {
     font-weight: 600;
     display: block;
-    margin-bottom: 6px;
-    font-size: 16px;
-    color: #003366;
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #004080;
     text-transform: capitalize;
 }
 
 input, textarea {
     width: 100%;
-    padding: 12px;
-    border: 2px solid rgba(0, 102, 204, 0.2);
+    padding: 14px;
+    border: 2px solid rgba(0, 123, 255, 0.2);
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 17px;
     transition: 0.3s ease-in-out;
-    background: #f8fbff;
+    background: #f4f8fc;
     color: #333;
     font-weight: 500;
     outline: none;
@@ -1082,8 +1081,8 @@ input, textarea {
 
 /* Fokus di input */
 input:focus, textarea:focus {
-    border-color: #0066cc;
-    box-shadow: 0px 0px 10px rgba(0, 102, 204, 0.3);
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
 }
 
 /* === TEXTAREA CUSTOM === */
@@ -1095,13 +1094,13 @@ textarea {
 /* === BUTTON STYLE === */
 button {
     width: 100%;
-    background: linear-gradient(135deg, #0066cc, #004080);
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     border: none;
-    padding: 12px;
+    padding: 14px;
     cursor: pointer;
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
     transition: background 0.3s, transform 0.2s ease-in-out;
     text-transform: uppercase;
@@ -1109,93 +1108,93 @@ button {
 
 /* Hover effect */
 button:hover {
-    background: linear-gradient(135deg, #004080, #002b5c);
+    background: linear-gradient(135deg, #0056b3, #004080);
     transform: scale(1.05);
 }
 
 /* === RADIO BUTTONS STYLE === */
 .gender-options {
     display: flex;
-    gap: 15px;
-    font-size: 15px;
-    color: #003366;
-    margin-top: 8px;
+    gap: 20px;
+    font-size: 16px;
+    color: #004080;
+    margin-top: 10px;
 }
 
 .gender-options label {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     cursor: pointer;
 }
 
 .gender-options input[type="radio"] {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    border: 2px solid #0066cc;
+    border: 2px solid #007bff;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
 /* Focused radio button */
 .gender-options input[type="radio"]:focus {
-    border-color: #004080;
+    border-color: #0056b3;
     outline: none;
 }
 
 /* === DATE INPUT CUSTOM STYLE === */
 input[type="date"] {
     width: 100%;
-    padding: 12px;
-    background: #f8fbff;
+    padding: 14px;
+    background: #f4f8fc;
     color: #333;
-    border: 2px solid rgba(0, 102, 204, 0.2);
+    border: 2px solid rgba(0, 123, 255, 0.2);
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 17px;
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
 input[type="date"]:focus {
-    border-color: #0066cc;
-    box-shadow: 0px 0px 10px rgba(0, 102, 204, 0.3);
+    border-color: #007bff;
+    box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.3);
 }
 
 /* Styling the calendar popup */
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background-color: #0066cc;
+    background-color: #007bff;
     border-radius: 50%;
-    padding: 4px;
+    padding: 5px;
     color: white;
 }
 
 /* === OUTPUT STYLE === */
 #message-output {
     background: white;
-    padding: 30px;
+    padding: 35px;
     border-radius: 12px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
     width: 100%;
 }
 
 #message-output p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 12px;
     color: #222;
 }
 
 #message-output span {
     font-weight: 600;
-    color: #0066cc;
+    color: #007bff;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
     .message-container {
         max-width: 900px;
-        gap: 25px;
+        gap: 30px;
     }
 
     #message-us h2 {
@@ -1215,12 +1214,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
 
     input, textarea {
-        font-size: 15px;
-        padding: 10px;
+        font-size: 16px;
+        padding: 12px;
     }
 
     button {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     #message-us {
@@ -1232,11 +1231,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
